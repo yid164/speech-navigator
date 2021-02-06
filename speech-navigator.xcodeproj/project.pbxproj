@@ -56,13 +56,9 @@
 		DA56878925CF5ADF00EB5195 /* speech-navigator */ = {
 			isa = PBXGroup;
 			children = (
-				DA56878A25CF5ADF00EB5195 /* speech_navigatorApp.swift */,
-				DA56878C25CF5ADF00EB5195 /* ContentView.swift */,
-				DA56878E25CF5AE000EB5195 /* Assets.xcassets */,
-				DA56879325CF5AE000EB5195 /* Persistence.swift */,
-				DA56879825CF5AE000EB5195 /* Info.plist */,
-				DA56879525CF5AE000EB5195 /* speech_navigator.xcdatamodeld */,
-				DA56879025CF5AE000EB5195 /* Preview Content */,
+				DA5687A125CF5D6600EB5195 /* PersistenceManager */,
+				DA5687A025CF5D1F00EB5195 /* View */,
+				DA56879F25CF5CDC00EB5195 /* App */,
 			);
 			path = "speech-navigator";
 			sourceTree = "<group>";
@@ -73,6 +69,34 @@
 				DA56879125CF5AE000EB5195 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DA56879F25CF5CDC00EB5195 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DA56878A25CF5ADF00EB5195 /* speech_navigatorApp.swift */,
+				DA56878E25CF5AE000EB5195 /* Assets.xcassets */,
+				DA56879825CF5AE000EB5195 /* Info.plist */,
+				DA56879025CF5AE000EB5195 /* Preview Content */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DA5687A025CF5D1F00EB5195 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA56878C25CF5ADF00EB5195 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA5687A125CF5D6600EB5195 /* PersistenceManager */ = {
+			isa = PBXGroup;
+			children = (
+				DA56879325CF5AE000EB5195 /* Persistence.swift */,
+				DA56879525CF5AE000EB5195 /* speech_navigator.xcdatamodeld */,
+			);
+			path = PersistenceManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
