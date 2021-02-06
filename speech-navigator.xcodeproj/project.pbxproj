@@ -76,8 +76,8 @@
 			children = (
 				DA56878A25CF5ADF00EB5195 /* speech_navigatorApp.swift */,
 				DA56878E25CF5AE000EB5195 /* Assets.xcassets */,
-				DA56879825CF5AE000EB5195 /* Info.plist */,
 				DA56879025CF5AE000EB5195 /* Preview Content */,
+				DA56879825CF5AE000EB5195 /* Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -300,10 +300,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"speech-navigator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"speech-navigator/App/Preview Content\"";
 				DEVELOPMENT_TEAM = GTYP9QNGLH;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "speech-navigator/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/speech-navigator/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -322,10 +322,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"speech-navigator/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"speech-navigator/App/Preview Content\"";
 				DEVELOPMENT_TEAM = GTYP9QNGLH;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "speech-navigator/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/speech-navigator/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
