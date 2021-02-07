@@ -19,9 +19,3 @@ struct VisualBarView: View {
         }
     }
 }
-
-//struct VisualBarView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        VisualBarView()
-//    }
-//}
