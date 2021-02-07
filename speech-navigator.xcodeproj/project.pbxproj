@@ -15,6 +15,7 @@
 		DA56879725CF5AE000EB5195 /* speech_navigator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA56879525CF5AE000EB5195 /* speech_navigator.xcdatamodeld */; };
 		DAE27BD125CF636D009EAEF5 /* MicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD025CF636D009EAEF5 /* MicManager.swift */; };
 		DAE27BD525CF6638009EAEF5 /* VisualBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD425CF6638009EAEF5 /* VisualBarView.swift */; };
+		DAE27BD925CFA679009EAEF5 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD825CFA679009EAEF5 /* SpeechManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DA56879825CF5AE000EB5195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAE27BD025CF636D009EAEF5 /* MicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicManager.swift; sourceTree = "<group>"; };
 		DAE27BD425CF6638009EAEF5 /* VisualBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualBarView.swift; sourceTree = "<group>"; };
+		DAE27BD825CFA679009EAEF5 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		DA56878925CF5ADF00EB5195 /* speech-navigator */ = {
 			isa = PBXGroup;
 			children = (
+				DAE27BD725CFA663009EAEF5 /* SpeechManager */,
 				DAE27BCF25CF6349009EAEF5 /* SpeechVisuallization */,
 				DA5687A125CF5D6600EB5195 /* PersistenceManager */,
 				DA5687A025CF5D1F00EB5195 /* View */,
@@ -111,6 +114,14 @@
 				DAE27BD025CF636D009EAEF5 /* MicManager.swift */,
 			);
 			path = SpeechVisuallization;
+			sourceTree = "<group>";
+		};
+		DAE27BD725CFA663009EAEF5 /* SpeechManager */ = {
+			isa = PBXGroup;
+			children = (
+				DAE27BD825CFA679009EAEF5 /* SpeechManager.swift */,
+			);
+			path = SpeechManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 				DA56878D25CF5ADF00EB5195 /* ContentView.swift in Sources */,
 				DA56878B25CF5ADF00EB5195 /* speech_navigatorApp.swift in Sources */,
 				DA56879725CF5AE000EB5195 /* speech_navigator.xcdatamodeld in Sources */,
+				DAE27BD925CFA679009EAEF5 /* SpeechManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
