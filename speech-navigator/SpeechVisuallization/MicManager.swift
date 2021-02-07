@@ -29,6 +29,10 @@ class MicMonitor: ObservableObject {
         })
     }
     
+    public func stopMonitoring() {
+        audioRecorder.stop()
+    }
+    
     init(numberOfSamples: Int) {
         self.numberOfSamples = numberOfSamples > 0 ? numberOfSamples : 10
         self.soundSamples = [Float](repeating: .zero, count: numberOfSamples)

@@ -12,7 +12,7 @@
 		DA56878F25CF5AE000EB5195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA56878E25CF5AE000EB5195 /* Assets.xcassets */; };
 		DA56879225CF5AE000EB5195 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA56879125CF5AE000EB5195 /* Preview Assets.xcassets */; };
 		DA56879425CF5AE000EB5195 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA56879325CF5AE000EB5195 /* Persistence.swift */; };
-		DA56879725CF5AE000EB5195 /* speech_navigator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA56879525CF5AE000EB5195 /* speech_navigator.xcdatamodeld */; };
+		DA56879725CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA56879525CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld */; };
 		DAE27BD125CF636D009EAEF5 /* MicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD025CF636D009EAEF5 /* MicManager.swift */; };
 		DAE27BD525CF6638009EAEF5 /* VisualBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD425CF6638009EAEF5 /* VisualBarView.swift */; };
 		DAE27BD925CFA679009EAEF5 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD825CFA679009EAEF5 /* SpeechManager.swift */; };
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				DA56879325CF5AE000EB5195 /* Persistence.swift */,
-				DA56879525CF5AE000EB5195 /* speech_navigator.xcdatamodeld */,
+				DA56879525CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld */,
 			);
 			path = PersistenceManager;
 			sourceTree = "<group>";
@@ -198,7 +198,7 @@
 				DA56879425CF5AE000EB5195 /* Persistence.swift in Sources */,
 				DA56878D25CF5ADF00EB5195 /* ContentView.swift in Sources */,
 				DA56878B25CF5ADF00EB5195 /* speech_navigatorApp.swift in Sources */,
-				DA56879725CF5AE000EB5195 /* speech_navigator.xcdatamodeld in Sources */,
+				DA56879725CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld in Sources */,
 				DAE27BD925CFA679009EAEF5 /* SpeechManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,13 +390,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DA56879525CF5AE000EB5195 /* speech_navigator.xcdatamodeld */ = {
+		DA56879525CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				DA56879625CF5AE000EB5195 /* speech_navigator.xcdatamodel */,
 			);
 			currentVersion = DA56879625CF5AE000EB5195 /* speech_navigator.xcdatamodel */;
-			path = speech_navigator.xcdatamodeld;
+			path = SpeechNavigator.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

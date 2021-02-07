@@ -13,7 +13,7 @@ struct PersistenceController {
     let container: NSPersistentContainer
     
     init() {
-        container = NSPersistentContainer(name: "speech-navigator")
+        container = NSPersistentContainer(name: "SpeechNavigator")
         container.loadPersistentStores{ (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")

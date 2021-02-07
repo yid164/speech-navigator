@@ -27,25 +27,25 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
-            }
-            .navigationTitle("Speech Todo List")
-            
-            RoundedRectangle(cornerRadius: 25)
-                .fill(Color.primary.opacity(0.5))
-                .padding()
-                .overlay(
-                    VStack {
-                        visulizerView()
-                    }
-                )
-                .opacity(recording ? 1 : 0)
-            
-            VStack {
-                recordButton()
+                .navigationTitle("Speech Todo List")
+                
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(Color.primary.opacity(0.5))
+                    .padding()
+                    .overlay(
+                        VStack {
+                            visulizerView()
+                        }
+                    )
+                    .opacity(recording ? 1 : 0)
+                
+                VStack {
+                    recordButton()
+                }
             }
         }.onAppear() {
             speechManager.checkPermissions()
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func recordButton() -> some View {
@@ -62,6 +62,7 @@ struct ContentView: View {
         if speechManager.isRecording {
             self.recording = false
             speechManager.stopRecording()
+            mic.stopMonitoring()
         } else {
             self.recording = true
             mic.startMonitoring()
