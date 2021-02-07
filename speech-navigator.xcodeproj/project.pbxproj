@@ -11,8 +11,7 @@
 		DA56878D25CF5ADF00EB5195 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA56878C25CF5ADF00EB5195 /* ContentView.swift */; };
 		DA56878F25CF5AE000EB5195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA56878E25CF5AE000EB5195 /* Assets.xcassets */; };
 		DA56879225CF5AE000EB5195 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA56879125CF5AE000EB5195 /* Preview Assets.xcassets */; };
-		DA56879425CF5AE000EB5195 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA56879325CF5AE000EB5195 /* Persistence.swift */; };
-		DA56879725CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA56879525CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld */; };
+		DAD31B6725D088E000600A43 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD31B6625D088E000600A43 /* Command.swift */; };
 		DAE27BD125CF636D009EAEF5 /* MicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD025CF636D009EAEF5 /* MicManager.swift */; };
 		DAE27BD525CF6638009EAEF5 /* VisualBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD425CF6638009EAEF5 /* VisualBarView.swift */; };
 		DAE27BD925CFA679009EAEF5 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD825CFA679009EAEF5 /* SpeechManager.swift */; };
@@ -24,9 +23,8 @@
 		DA56878C25CF5ADF00EB5195 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DA56878E25CF5AE000EB5195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA56879125CF5AE000EB5195 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DA56879325CF5AE000EB5195 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		DA56879625CF5AE000EB5195 /* speech_navigator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = speech_navigator.xcdatamodel; sourceTree = "<group>"; };
 		DA56879825CF5AE000EB5195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAD31B6625D088E000600A43 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		DAE27BD025CF636D009EAEF5 /* MicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicManager.swift; sourceTree = "<group>"; };
 		DAE27BD425CF6638009EAEF5 /* VisualBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualBarView.swift; sourceTree = "<group>"; };
 		DAE27BD825CFA679009EAEF5 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
@@ -62,10 +60,10 @@
 		DA56878925CF5ADF00EB5195 /* speech-navigator */ = {
 			isa = PBXGroup;
 			children = (
+				DAD31B6525D088C800600A43 /* Data */,
 				DAE27BDF25CFB40C009EAEF5 /* App */,
 				DAE27BD725CFA663009EAEF5 /* SpeechManager */,
 				DAE27BCF25CF6349009EAEF5 /* SpeechVisuallization */,
-				DA5687A125CF5D6600EB5195 /* PersistenceManager */,
 				DA5687A025CF5D1F00EB5195 /* View */,
 			);
 			path = "speech-navigator";
@@ -88,13 +86,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DA5687A125CF5D6600EB5195 /* PersistenceManager */ = {
+		DAD31B6525D088C800600A43 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				DA56879325CF5AE000EB5195 /* Persistence.swift */,
-				DA56879525CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld */,
+				DAD31B6625D088E000600A43 /* Command.swift */,
 			);
-			path = PersistenceManager;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		DAE27BCF25CF6349009EAEF5 /* SpeechVisuallization */ = {
@@ -195,11 +192,10 @@
 			files = (
 				DAE27BD525CF6638009EAEF5 /* VisualBarView.swift in Sources */,
 				DAE27BD125CF636D009EAEF5 /* MicManager.swift in Sources */,
-				DA56879425CF5AE000EB5195 /* Persistence.swift in Sources */,
 				DA56878D25CF5ADF00EB5195 /* ContentView.swift in Sources */,
 				DA56878B25CF5ADF00EB5195 /* speech_navigatorApp.swift in Sources */,
-				DA56879725CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld in Sources */,
 				DAE27BD925CFA679009EAEF5 /* SpeechManager.swift in Sources */,
+				DAD31B6725D088E000600A43 /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,19 +384,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DA56879525CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DA56879625CF5AE000EB5195 /* speech_navigator.xcdatamodel */,
-			);
-			currentVersion = DA56879625CF5AE000EB5195 /* speech_navigator.xcdatamodel */;
-			path = SpeechNavigator.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DA56877F25CF5ADF00EB5195 /* Project object */;
 }

@@ -9,11 +9,9 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Todo.created, ascending: true)], animation: .default) private var todos: FetchedResults<Todo>
     
+    @State private var commands: [Command] = []
     @State private var recording = false
-    
     @ObservedObject private var mic = MicMonitor(numberOfSamples: 10)
     
     private var speechManager = SpeechManager()
@@ -22,12 +20,12 @@ struct ContentView: View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 List {
-                    ForEach(todos) { item in
-                        Text(item.text ?? " - ")
+                    ForEach(commands) { item in
+                        Text(item.text)
                     }
                     .onDelete(perform: deleteItems)
                 }
-                .navigationTitle("Speech Todo List")
+                .navigationTitle("Speech Commands List")
                 
                 RoundedRectangle(cornerRadius: 25)
                     .fill(Color.primary.opacity(0.5))
@@ -74,16 +72,8 @@ struct ContentView: View {
                 
                 DispatchQueue.main.async {
                     withAnimation {
-                        let newItem = Todo(context: viewContext)
-                        newItem.id = UUID()
-                        newItem.text = text
-                        newItem.created = Date()
-                        
-                        do {
-                            try viewContext.save()
-                        } catch {
-                            print(error.localizedDescription)
-                        }
+                        let newItem = Command(id: UUID(), created: Date(), text: text)
+                        commands.append(newItem)
                     }
                 }
             }
@@ -108,13 +98,7 @@ struct ContentView: View {
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { todos[$0] }.forEach(viewContext.delete)
-            
-            do {
-                try viewContext.save()
-            } catch {
-                print(error.localizedDescription)
-            }
+            commands.remove(atOffsets: offsets)
         }
     }
 }
