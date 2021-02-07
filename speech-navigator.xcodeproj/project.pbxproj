@@ -12,7 +12,10 @@
 		DA56878F25CF5AE000EB5195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA56878E25CF5AE000EB5195 /* Assets.xcassets */; };
 		DA56879225CF5AE000EB5195 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA56879125CF5AE000EB5195 /* Preview Assets.xcassets */; };
 		DA56879425CF5AE000EB5195 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA56879325CF5AE000EB5195 /* Persistence.swift */; };
-		DA56879725CF5AE000EB5195 /* speech_navigator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA56879525CF5AE000EB5195 /* speech_navigator.xcdatamodeld */; };
+		DA56879725CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA56879525CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld */; };
+		DAE27BD125CF636D009EAEF5 /* MicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD025CF636D009EAEF5 /* MicManager.swift */; };
+		DAE27BD525CF6638009EAEF5 /* VisualBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD425CF6638009EAEF5 /* VisualBarView.swift */; };
+		DAE27BD925CFA679009EAEF5 /* SpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE27BD825CFA679009EAEF5 /* SpeechManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		DA56879325CF5AE000EB5195 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DA56879625CF5AE000EB5195 /* speech_navigator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = speech_navigator.xcdatamodel; sourceTree = "<group>"; };
 		DA56879825CF5AE000EB5195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAE27BD025CF636D009EAEF5 /* MicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicManager.swift; sourceTree = "<group>"; };
+		DAE27BD425CF6638009EAEF5 /* VisualBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualBarView.swift; sourceTree = "<group>"; };
+		DAE27BD825CFA679009EAEF5 /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +62,11 @@
 		DA56878925CF5ADF00EB5195 /* speech-navigator */ = {
 			isa = PBXGroup;
 			children = (
-				DA56878A25CF5ADF00EB5195 /* speech_navigatorApp.swift */,
-				DA56878C25CF5ADF00EB5195 /* ContentView.swift */,
-				DA56878E25CF5AE000EB5195 /* Assets.xcassets */,
-				DA56879325CF5AE000EB5195 /* Persistence.swift */,
-				DA56879825CF5AE000EB5195 /* Info.plist */,
-				DA56879525CF5AE000EB5195 /* speech_navigator.xcdatamodeld */,
-				DA56879025CF5AE000EB5195 /* Preview Content */,
+				DAE27BDF25CFB40C009EAEF5 /* App */,
+				DAE27BD725CFA663009EAEF5 /* SpeechManager */,
+				DAE27BCF25CF6349009EAEF5 /* SpeechVisuallization */,
+				DA5687A125CF5D6600EB5195 /* PersistenceManager */,
+				DA5687A025CF5D1F00EB5195 /* View */,
 			);
 			path = "speech-navigator";
 			sourceTree = "<group>";
@@ -73,6 +77,51 @@
 				DA56879125CF5AE000EB5195 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DA5687A025CF5D1F00EB5195 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA56878C25CF5ADF00EB5195 /* ContentView.swift */,
+				DAE27BD425CF6638009EAEF5 /* VisualBarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA5687A125CF5D6600EB5195 /* PersistenceManager */ = {
+			isa = PBXGroup;
+			children = (
+				DA56879325CF5AE000EB5195 /* Persistence.swift */,
+				DA56879525CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld */,
+			);
+			path = PersistenceManager;
+			sourceTree = "<group>";
+		};
+		DAE27BCF25CF6349009EAEF5 /* SpeechVisuallization */ = {
+			isa = PBXGroup;
+			children = (
+				DAE27BD025CF636D009EAEF5 /* MicManager.swift */,
+			);
+			path = SpeechVisuallization;
+			sourceTree = "<group>";
+		};
+		DAE27BD725CFA663009EAEF5 /* SpeechManager */ = {
+			isa = PBXGroup;
+			children = (
+				DAE27BD825CFA679009EAEF5 /* SpeechManager.swift */,
+			);
+			path = SpeechManager;
+			sourceTree = "<group>";
+		};
+		DAE27BDF25CFB40C009EAEF5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DA56878A25CF5ADF00EB5195 /* speech_navigatorApp.swift */,
+				DA56878E25CF5AE000EB5195 /* Assets.xcassets */,
+				DA56879025CF5AE000EB5195 /* Preview Content */,
+				DA56879825CF5AE000EB5195 /* Info.plist */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +193,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE27BD525CF6638009EAEF5 /* VisualBarView.swift in Sources */,
+				DAE27BD125CF636D009EAEF5 /* MicManager.swift in Sources */,
 				DA56879425CF5AE000EB5195 /* Persistence.swift in Sources */,
 				DA56878D25CF5ADF00EB5195 /* ContentView.swift in Sources */,
 				DA56878B25CF5ADF00EB5195 /* speech_navigatorApp.swift in Sources */,
-				DA56879725CF5AE000EB5195 /* speech_navigator.xcdatamodeld in Sources */,
+				DA56879725CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld in Sources */,
+				DAE27BD925CFA679009EAEF5 /* SpeechManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +331,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"speech-navigator/Preview Content\"";
 				DEVELOPMENT_TEAM = GTYP9QNGLH;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "speech-navigator/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/speech-navigator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,7 +353,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"speech-navigator/Preview Content\"";
 				DEVELOPMENT_TEAM = GTYP9QNGLH;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "speech-navigator/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/speech-navigator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -338,13 +390,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		DA56879525CF5AE000EB5195 /* speech_navigator.xcdatamodeld */ = {
+		DA56879525CF5AE000EB5195 /* SpeechNavigator.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				DA56879625CF5AE000EB5195 /* speech_navigator.xcdatamodel */,
 			);
 			currentVersion = DA56879625CF5AE000EB5195 /* speech_navigator.xcdatamodel */;
-			path = speech_navigator.xcdatamodeld;
+			path = SpeechNavigator.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
