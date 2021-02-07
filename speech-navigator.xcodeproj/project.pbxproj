@@ -62,11 +62,11 @@
 		DA56878925CF5ADF00EB5195 /* speech-navigator */ = {
 			isa = PBXGroup;
 			children = (
+				DAE27BDF25CFB40C009EAEF5 /* App */,
 				DAE27BD725CFA663009EAEF5 /* SpeechManager */,
 				DAE27BCF25CF6349009EAEF5 /* SpeechVisuallization */,
 				DA5687A125CF5D6600EB5195 /* PersistenceManager */,
 				DA5687A025CF5D1F00EB5195 /* View */,
-				DA56879F25CF5CDC00EB5195 /* App */,
 			);
 			path = "speech-navigator";
 			sourceTree = "<group>";
@@ -77,17 +77,6 @@
 				DA56879125CF5AE000EB5195 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		DA56879F25CF5CDC00EB5195 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				DA56878A25CF5ADF00EB5195 /* speech_navigatorApp.swift */,
-				DA56878E25CF5AE000EB5195 /* Assets.xcassets */,
-				DA56879025CF5AE000EB5195 /* Preview Content */,
-				DA56879825CF5AE000EB5195 /* Info.plist */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		DA5687A025CF5D1F00EB5195 /* View */ = {
@@ -122,6 +111,17 @@
 				DAE27BD825CFA679009EAEF5 /* SpeechManager.swift */,
 			);
 			path = SpeechManager;
+			sourceTree = "<group>";
+		};
+		DAE27BDF25CFB40C009EAEF5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DA56878A25CF5ADF00EB5195 /* speech_navigatorApp.swift */,
+				DA56878E25CF5AE000EB5195 /* Assets.xcassets */,
+				DA56879025CF5AE000EB5195 /* Preview Content */,
+				DA56879825CF5AE000EB5195 /* Info.plist */,
+			);
+			name = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,10 +328,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"speech-navigator/App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"speech-navigator/Preview Content\"";
 				DEVELOPMENT_TEAM = GTYP9QNGLH;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/speech-navigator/App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/speech-navigator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -350,10 +350,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"speech-navigator/App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"speech-navigator/Preview Content\"";
 				DEVELOPMENT_TEAM = GTYP9QNGLH;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/speech-navigator/App/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/speech-navigator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
