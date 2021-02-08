@@ -20,11 +20,13 @@ struct ContentView: View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 List {
-                    ForEach(commands) { item in
-                        Text(item.text)
-                    }
-                    .onDelete(perform: deleteItems)
+//                    ForEach(commands) { item in
+//                        Text(item.text)
+//                    }
+//                    .onDelete(perform: deleteItems)
+                    OperationsView()
                 }
+                .listStyle(InsetGroupedListStyle())
                 .navigationTitle("Speech Commands List")
                 
                 RoundedRectangle(cornerRadius: 25)
