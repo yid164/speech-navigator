@@ -16,30 +16,29 @@ struct OperationsView: View {
         Item(number: 15, unit: Unit(symbol: "g")),
         Item(number: 16, unit: Unit(symbol: "g")),
         Item(number: 17, unit: Unit(symbol: "g"))
-        
     ]
     
+    @Binding var currentIndex: Int?
+    
     var body: some View {
-        Form {
-            Section {
-                Text("Start Your Operations")
+        Section {
+            Text("Start Your Operations")
+        }
+        
+        ForEach(0 ..< items.count) { index in
+            Section(header: Text("Item \(index)")) {
+                TextField("Record your item \(index)", text: items[index].itemValue )
             }
-            
-            ForEach(0 ..< items.count) { index in
-                Section(header: Text("Item \(index)")) {
-                    TextField("Record your item \(index)", text: items[index].itemValue )
-                }
-                .listRowBackground(Color( selectedItem == items[index] ? .blue : .systemBackground))
-                .onTapGesture {
-                    self.selectedItem = items[index]
-                }
+            .listRowBackground(Color( currentIndex == index ? .purple : .systemBackground))
+            .onTapGesture {
+                currentIndex = index
             }
         }
     }
 }
 
-struct OperationsView_Previews: PreviewProvider {
-    static var previews: some View {
-        OperationsView()
-    }
-}
+//struct OperationsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OperationsView()
+//    }
+//}

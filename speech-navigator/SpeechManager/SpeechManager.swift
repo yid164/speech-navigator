@@ -15,6 +15,7 @@ class SpeechManager {
     private var inputNote: AVAudioInputNode!
     private var audioSession: AVAudioSession!
     
+    
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     
     func checkPermissions() {
@@ -58,12 +59,8 @@ class SpeechManager {
         
         recognizer.recognitionTask(with: recognitionRequest!) { (result, error) in
             guard error == nil else { return }
-            
             guard let result = result else { return }
-            
-            if result.isFinal {
-                completion(result.bestTranscription.formattedString)
-            }
+            completion(result.bestTranscription.formattedString)
         }
         
         audioEngine = AVAudioEngine()

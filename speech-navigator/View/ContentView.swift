@@ -10,22 +10,21 @@ import CoreData
 
 struct ContentView: View {
     
-    @State private var commands: [Command] = []
     @State private var recording = false
     @ObservedObject private var mic = MicMonitor(numberOfSamples: 10)
-    
     private var speechManager = SpeechManager()
+    @State private var currentCommand: Command = .none
+    @State private var currentIndex: Int? = nil
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 List {
-                    ForEach(commands) { item in
-                        Text(item.text)
-                    }
-                    .onDelete(perform: deleteItems)
+                    OperationsView(currentIndex: $currentIndex)
                 }
+                .listStyle(InsetGroupedListStyle())
                 .navigationTitle("Speech Commands List")
+                .navigationBarTitleDisplayMode(.inline)
                 
                 RoundedRectangle(cornerRadius: 25)
                     .fill(Color.primary.opacity(0.5))
@@ -47,7 +46,7 @@ struct ContentView: View {
     }
     
     private func recordButton() -> some View {
-        Button(action: addItem) {
+        Button(action: startRecording) {
             Image(systemName: recording ? "stop.fill" : "mic.fill")
                 .font(.system(size: 40))
                 .padding()
@@ -56,7 +55,7 @@ struct ContentView: View {
         .foregroundColor(.red)
     }
     
-    private func addItem() {
+    private func startRecording() {
         if speechManager.isRecording {
             self.recording = false
             speechManager.stopRecording()
@@ -65,20 +64,24 @@ struct ContentView: View {
             self.recording = true
             mic.startMonitoring()
             speechManager.start { speechText in
-                guard let text = speechText, !text.isEmpty else {
+                if let text = speechText, !text.isEmpty {
+                    if !fetchCommands(text: text) {
+                        repeatRecording()
+                    } else {
+                        repeatRecording()
+                    }
+                } else {
                     self.recording = false
                     return
-                }
-                
-                DispatchQueue.main.async {
-                    withAnimation {
-                        let newItem = Command(id: UUID(), created: Date(), text: text)
-                        commands.append(newItem)
-                    }
                 }
             }
         }
         speechManager.isRecording.toggle()
+    }
+    
+    private func repeatRecording() {
+        speechManager.isRecording = false
+        startRecording()
     }
     
     private func normalizedSouldLevel(level: Float) -> CGFloat {
@@ -96,15 +99,36 @@ struct ContentView: View {
         }
     }
     
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            commands.remove(atOffsets: offsets)
+    private func fetchCommands(text: String) -> Bool {
+        switch text.lowercased() {
+            case "next":
+                currentCommand = .next
+                if currentIndex != nil {
+                    if currentIndex! <= 4 {
+                        currentIndex! += 1
+                    }
+                } else {
+                    currentIndex = 0
+                }
+                return false
+            case "previous":
+                currentCommand = .previous
+                if currentIndex != nil {
+                    if currentIndex! > 0 {
+                        currentIndex! -= 1
+                    }
+                } else {
+                    currentIndex = 0
+                }
+                return false
+            default:
+                currentCommand = .none
+                return true
         }
     }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+enum Command: CaseIterable {
+    case previous, next, none
+
+}
