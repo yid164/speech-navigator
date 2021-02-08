@@ -17,12 +17,13 @@ struct ContentView: View {
     private var speechManager = SpeechManager()
     
     @State private var currentCommand: Command = .none
+    @State private var currentIndex: Int? = nil
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 List {
-                    OperationsView()
+                    OperationsView(currentIndex: $currentIndex)
                 }
                 .listStyle(InsetGroupedListStyle())
                 .navigationTitle("Speech Commands List")
@@ -103,9 +104,23 @@ struct ContentView: View {
         switch text.lowercased() {
             case "next":
                 currentCommand = .next
+                if currentIndex != nil {
+                    if currentIndex! <= 4 {
+                        currentIndex! += 1
+                    }
+                } else {
+                    currentIndex = 0
+                }
                 return false
             case "previous":
                 currentCommand = .previous
+                if currentIndex != nil {
+                    if currentIndex! > 0 {
+                        currentIndex! -= 1
+                    }
+                } else {
+                    currentIndex = 0
+                }
                 return false
             default:
                 currentCommand = .none

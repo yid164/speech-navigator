@@ -19,6 +19,8 @@ struct OperationsView: View {
         
     ]
     
+    @Binding var currentIndex: Int?
+    
     var body: some View {
         Section {
             Text("Start Your Operations")
@@ -28,9 +30,9 @@ struct OperationsView: View {
             Section(header: Text("Item \(index)")) {
                 TextField("Record your item \(index)", text: items[index].itemValue )
             }
-            .listRowBackground(Color( selectedItem == items[index] ? .blue : .systemBackground))
+            .listRowBackground(Color( currentIndex == index ? .purple : .systemBackground))
             .onTapGesture {
-                self.selectedItem = items[index]
+                currentIndex = index
             }
         }
     }

@@ -15,6 +15,7 @@ class SpeechManager {
     private var inputNote: AVAudioInputNode!
     private var audioSession: AVAudioSession!
     
+    
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     
     func checkPermissions() {
