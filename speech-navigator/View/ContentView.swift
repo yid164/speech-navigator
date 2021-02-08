@@ -12,9 +12,7 @@ struct ContentView: View {
     
     @State private var recording = false
     @ObservedObject private var mic = MicMonitor(numberOfSamples: 10)
-    
     private var speechManager = SpeechManager()
-    
     @State private var currentCommand: Command = .none
     @State private var currentIndex: Int? = nil
     

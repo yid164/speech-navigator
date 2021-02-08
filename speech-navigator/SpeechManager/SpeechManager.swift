@@ -59,18 +59,8 @@ class SpeechManager {
         
         recognizer.recognitionTask(with: recognitionRequest!) { (result, error) in
             guard error == nil else { return }
-            
             guard let result = result else { return }
-            
-//            if result.isFinal {
-//                completion(result.bestTranscription.formattedString)
-//            }
             completion(result.bestTranscription.formattedString)
-//            if result.isProxy() {
-//                completion(result.bestTranscription.formattedString)
-//            }
-            
-            
         }
         
         audioEngine = AVAudioEngine()
