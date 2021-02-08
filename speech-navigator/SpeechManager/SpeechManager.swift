@@ -61,9 +61,15 @@ class SpeechManager {
             
             guard let result = result else { return }
             
-            if result.isFinal {
-                completion(result.bestTranscription.formattedString)
-            }
+//            if result.isFinal {
+//                completion(result.bestTranscription.formattedString)
+//            }
+            completion(result.bestTranscription.formattedString)
+//            if result.isProxy() {
+//                completion(result.bestTranscription.formattedString)
+//            }
+            
+            
         }
         
         audioEngine = AVAudioEngine()
