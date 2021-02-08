@@ -10,7 +10,6 @@ import CoreData
 
 struct ContentView: View {
     
-    //@State private var commands: [Command] = []
     @State private var recording = false
     @ObservedObject private var mic = MicMonitor(numberOfSamples: 10)
     
@@ -69,12 +68,9 @@ struct ContentView: View {
             speechManager.start { speechText in
                 if let text = speechText, !text.isEmpty {
                     if !fetchCommands(text: text) {
-                        print(currentCommand)
-                        speechManager.isRecording = false
-                        startRecording()
+                        repeatRecording()
                     } else {
-                        speechManager.isRecording = false
-                        startRecording()
+                        repeatRecording()
                     }
                 } else {
                     self.recording = false
@@ -83,6 +79,11 @@ struct ContentView: View {
             }
         }
         speechManager.isRecording.toggle()
+    }
+    
+    private func repeatRecording() {
+        speechManager.isRecording = false
+        startRecording()
     }
     
     private func normalizedSouldLevel(level: Float) -> CGFloat {
@@ -129,17 +130,7 @@ struct ContentView: View {
     }
 }
 
-
 enum Command: CaseIterable {
     case previous, next, none
-    
-//    var commandValue: String {
-//
-//    }
-}
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+}

@@ -16,7 +16,6 @@ struct OperationsView: View {
         Item(number: 15, unit: Unit(symbol: "g")),
         Item(number: 16, unit: Unit(symbol: "g")),
         Item(number: 17, unit: Unit(symbol: "g"))
-        
     ]
     
     @Binding var currentIndex: Int?
