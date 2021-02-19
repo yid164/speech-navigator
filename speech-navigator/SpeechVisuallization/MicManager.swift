@@ -15,7 +15,7 @@ class MicMonitor: ObservableObject {
     private var currentSample: Int
     private let numberOfSamples: Int
     
-    @Published public var soundSamples: [Float]
+    @Published public var soundSamples: [Float] = []
     
     public func startMonitoring() {
         audioRecorder.isMeteringEnabled = true
